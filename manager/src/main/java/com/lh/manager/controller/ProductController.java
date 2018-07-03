@@ -28,6 +28,7 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping(value = "", method = RequestMethod.POST)
+    @ResponseBody
     public Product addProduct(@RequestBody Product product) {
         LOG.info("创建产品，参数:{}", product);
         Product result = productService.addProduct(product);
