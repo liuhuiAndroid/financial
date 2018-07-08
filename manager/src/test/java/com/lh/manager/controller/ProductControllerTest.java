@@ -4,8 +4,10 @@ import com.lh.entity.Product;
 import com.lh.entity.enums.ProductStatus;
 import com.lh.util.RestUtil;
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.client.ClientHttpResponse;
@@ -23,6 +25,7 @@ import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProductControllerTest {
 
     private static RestTemplate rest = new RestTemplate();
@@ -86,6 +89,18 @@ public class ProductControllerTest {
         exceptions.forEach(product -> {
             Map<String, String> result = RestUtil.postJSON(rest, baseUrl + "/products", product, HashMap.class);
             Assert.isTrue(result.get("message").equals(product.getName()), "插入成功");
+        });
+    }
+
+    @Test
+    public void zfindOne(){
+        normals.forEach(product -> {
+            Product result = rest.getForObject(baseUrl+"/products/"+product.getId(),Product.class);
+            Assert.isTrue(result.getId().equals(product.getId()),"查询失败");
+        });
+        exceptions.forEach(product -> {
+            Product result = rest.getForObject(baseUrl+"/products/"+product.getId(),Product.class);
+            Assert.isNull(result,"查询失败");
         });
     }
 
