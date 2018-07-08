@@ -11,6 +11,10 @@ ext {
             mysql : [
                     "mysql:mysql-connector-java:5.1.29"
             ],
+            swagger: [
+                    "io.springfox:springfox-swagger2:2.7.0",
+                    "io.springfox:springfox-swagger-ui:2.7.0"
+            ],
             test  : [
                     "org.springframework.boot:spring-boot-starter-test:${versions.springBootVersion}"
             ]
