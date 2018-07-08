@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.HashMap;
 import java.util.Map;
 
-@ControllerAdvice(basePackages = {"com.lh.manager.controller"})
+//@ControllerAdvice(basePackages = {"com.lh.manager.controller"})
 public class ErrorControllerAdvice {
 
     @ExceptionHandler(Exception.class)

@@ -9,7 +9,10 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
-@Configuration
+/**
+ * 错误处理相关配置
+ */
+//@Configuration
 public class ErrorConfiguration {
 
     @Bean
