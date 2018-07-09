@@ -6,4 +6,5 @@ include 'manager'
 include 'quartz'
 include 'saller'
 include 'swagger'
+include 'seller'
 
