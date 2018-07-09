@@ -1,5 +1,7 @@
 package com.lh.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -12,6 +14,7 @@ import java.util.Date;
  * 产品
  */
 @Entity
+@ApiModel(value = "ppp",description = "产品模型")
 public class Product {
 
     @Id
@@ -20,6 +23,7 @@ public class Product {
     /**
      * @see com.lh.entity.enums.ProductStatus
      */
+    @ApiModelProperty(value = "状态",dataType = "com.lh.entity.enums.ProductStatus")
     private String status;
     //起投金额
     private BigDecimal thresholdAmount;
