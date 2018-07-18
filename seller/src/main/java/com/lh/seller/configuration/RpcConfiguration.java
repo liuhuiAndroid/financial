@@ -14,6 +14,7 @@ import java.net.URL;
 
 /**
  * rpc 相关配置
+ * https://github.com/briandilley/jsonrpc4j/wiki/JSON-RPC-for-Java-Client-&-Spring-Boot-(Client-example)
  */
 @Configuration
 // 接口需要扫描进来

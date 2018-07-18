@@ -20,8 +20,8 @@ import java.util.List;
 /**
  * rpc服务实现类
  */
-@AutoJsonRpcServiceImpl
 @Service
+@AutoJsonRpcServiceImpl
 public class ProductRpcImpl implements ProductRpc {
 
     private static Logger LOG = LoggerFactory.getLogger(ProductRpcImpl.class);

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * rpc相关配置
+ * https://github.com/briandilley/jsonrpc4j/wiki/JSON-RPC-for-Java-Client-&-Spring-Boot-(Server-example)
  */
 @Configuration
 public class RpcConfiguration {

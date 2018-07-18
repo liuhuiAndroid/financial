@@ -9,8 +9,7 @@ import java.util.List;
 
 /**
  * 产品相关的rpc服务
- */
-// 不能以/开头
+         */
 @JsonRpcService("rpc/products")
 public interface ProductRpc {
 

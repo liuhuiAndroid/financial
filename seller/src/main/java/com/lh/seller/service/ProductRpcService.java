@@ -36,7 +36,6 @@ public class ProductRpcService {
         ProductRpcReq req = new ProductRpcReq();
         List<String> status = new ArrayList<>();
         status.add(ProductStatus.IN_SELL.name());
-        Pageable pageable = new PageRequest(0,1000,Sort.Direction.DESC,"rewardRate");
         req.setStatusList(status);
         LOG.info("rpc查询全部产品，请求:{}",req);
         List<Product> result = productRpc.query(req);
@@ -47,6 +46,20 @@ public class ProductRpcService {
     @PostConstruct
     public void testFindAll(){
         findAll();
+        findOne("T002");
+    }
+
+    /**
+     * 查询单个产品
+     *
+     * @param id
+     * @return
+     */
+    public Product findOne(String id) {
+        LOG.info("rpc查询单个产品，请求:{}",id);
+        Product product = productRpc.findOne(id);
+        LOG.info("rpc查询单个产品，结果:{}",product);
+        return product;
     }
 
 }
