@@ -1,14 +1,18 @@
 package com.lh.seller;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * 销售端启动类
  */
 @SpringBootApplication
+@EnableCaching
+@EntityScan("com.lh.entity")
+@EnableScheduling
 public class SellerApp {
 
     public static void main(String[] args){
